@@ -12,12 +12,11 @@ import Foundation
 class TaskData {
     var title: String
     var details: String
-    var completionStatus: String
+    var completionStatus: Bool = true
     var dueDate: Date?
     
-    init(title: String, details: String, completionStatus: String) {
+    init(title: String, details: String) {
         self.title = title
         self.details = details
-        self.completionStatus = completionStatus
     }
 }

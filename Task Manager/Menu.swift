@@ -9,7 +9,7 @@
 import Foundation
 
 class Menu {
-    let
+    let taskManager = TaskLibrary()
     var shouldExit = false //When this is true, we should quit running the video game library.
     func go() { //This function will handle making the menu right. It will display the menu and take user input until the user wishes to quit the application.
         while !shouldExit {
@@ -50,25 +50,25 @@ Please enter a number between 1 and 8:\n
         switch input {
         case "1":
             //The User should be able to create new tasks.
-            print("")
+            taskManager.createNewTask()
         case "2":
             //The User should be able to see a list of all tasks (Completed and Incomplete).
-            print("")
+            taskManager.listOfAllTasks()
         case "3":
             //The User should be able to see a list of only Incomplete tasks.
-            print("")
+            taskManager.listOfIncomplete()
         case "4":
             //The User should be able to see a list of only completed tasks.
-            print("")
+            taskManager.listOfComplete()
         case "5":
             //The User should be able to mark a task as complete.
-            print("")
+            taskManager.markCompleteTask()
         case "6":
             //The User should be able to mark a completed task as incomplete.
-            print("")
+            taskManager.completeToIncomplete()
         case "7":
             //The User should be able to delete a task.
-            print("")
+            taskManager.deleteTasks()
         case "8":
             //The User should be able to exit the program.
             exit()
