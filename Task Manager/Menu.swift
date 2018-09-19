@@ -36,8 +36,8 @@ class Menu {
 1. Create a New Task
 2. List of Tasks
 3. List of Incomplete Tasks
-4. List of Completed Tasks
-5. Mark Task as Complete
+4.Mark Task as Complete
+5.List of Completed Tasks
 6. Mark Completed Task as Incomplete
 7. Delete Tasks
 8. Exit
@@ -58,11 +58,11 @@ Please enter a number between 1 and 8:\n
             //The User should be able to see a list of only Incomplete tasks.
             taskManager.listOfIncomplete()
         case "4":
-            //The User should be able to see a list of only completed tasks.
-            taskManager.listOfComplete()
-        case "5":
             //The User should be able to mark a task as complete.
             taskManager.markCompleteTask()
+        case "5":
+            //The User should be able to see a list of only completed tasks.
+            taskManager.listOfComplete()
         case "6":
             //The User should be able to mark a completed task as incomplete.
             taskManager.completeToIncomplete()
