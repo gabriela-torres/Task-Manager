@@ -36,13 +36,13 @@ class Menu {
 1. Create a New Task
 2. List of Tasks
 3. List of Incomplete Tasks
-4.Mark Task as Complete
-5.List of Completed Tasks
+4. Mark Task as Complete
+5. List of Completed Tasks
 6. Mark Completed Task as Incomplete
 7. Delete Tasks
 8. Exit
 
-Please enter a number between 1 and 8:\n
+Please enter a number between 1 and 8:
 """)
     }
     //Make a function called handleInput that takes our user input as a parameter and depending on what they enter print out what we would do.

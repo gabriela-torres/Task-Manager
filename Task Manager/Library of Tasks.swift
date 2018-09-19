@@ -9,7 +9,7 @@
 import Foundation
 
 class TaskLibrary {
-    var taskArray : [TaskData] = [TaskData(title: "Naps", details: "Go home and take a nap."), TaskData(title: "Eat", details: "Eat three meals a day"), TaskData(title: "School", details: "Go to school")]
+    var taskArray : [TaskData] = [TaskData(title: "Naps", details: "Go home and take a nap."), TaskData(title: "Eat", details: "Eat three meals a day."), TaskData(title: "School", details: "Go to school.")]
     
     func createNewTask() {
         //Prompt user to enter tilte and details for a new task to be added
@@ -38,16 +38,14 @@ class TaskLibrary {
     func listOfAllTasks() {
         //Printing out all of the tasks
         for task in taskArray {
-            print(task.title)
-            print(task.details)
+            print("\(task.title), \(task.details)")
         }
     }
     func listOfIncomplete() {
         //Checking for incomplete tasks in the task array
         for task in taskArray {
             if !task.completionStatus {
-                print(task.title)
-                print(task.details)
+                print("\(task.title), \(task.details)")
                 if let dueDate = task.dueDate{
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -58,11 +56,29 @@ class TaskLibrary {
     }
     func markCompleteTask() {
         //Marking a task a complete
+        for index in 0..<taskArray.count {
+            if taskArray[index].completionStatus == false {
+                print("\(index).\(taskArray[index].title)")
+            }
+        }
+        print("Please enter the number of the task you have completed:")
+        var userInput = Int(readLine()!)
         
+        while userInput == nil {
+            print("Invalid input. Please enter a usable number.")
+            userInput = Int(readLine()!)
+        }
+        taskArray[userInput!].completionStatus = true
+        //Remove the due date since the task is complete
+        taskArray[userInput!].dueDate = nil
     }
     func listOfComplete() {
         //Checking for completed tasks in the task array
-    
+        for task in taskArray {
+            if task.completionStatus {
+                print("\(task.title), \(task.details)")
+            }
+        }
     }
     func completeToIncomplete() {
         //Change a tasks status
@@ -71,14 +87,14 @@ class TaskLibrary {
     func deleteTasks() {
         //List all of tasks in title and detail with a number for the user to select
         for index in 0..<taskArray.count {
-            print("\(index).\(taskArray[index].title) \(taskArray[index].details)")
+            print("\(index).\(taskArray[index].title), \(taskArray[index].details)")
         }
-        print("Please enter the name you want to revome:")
+        print("Please enter the number of the task you want to revome:")
         var userInput = Int(readLine()!)
         let validTaskIndex = Array(0..<taskArray.count)
         
         while userInput == nil || !validTaskIndex.contains(userInput!) {
-            print("Invalid information. Please enter a usable information.")
+            print("Invalid input. Please enter a usable number.")
             userInput = Int(readLine()!)
         }
         taskArray.remove(at: userInput!)

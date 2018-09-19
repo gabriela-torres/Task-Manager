@@ -12,7 +12,7 @@ import Foundation
 class TaskData {
     var title: String
     var details: String
-    var completionStatus: Bool = true
+    var completionStatus: Bool = false
     var dueDate: Date?
     
     init(title: String, details: String) {
