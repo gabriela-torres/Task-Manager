@@ -82,7 +82,22 @@ class TaskLibrary {
     }
     func completeToIncomplete() {
         //Change a tasks status
+        //Marking a task a complete
+        for index in 0..<taskArray.count {
+            if taskArray[index].completionStatus == true {
+                print("\(index).\(taskArray[index].title)")
+            }
+        }
+        print("Please enter the number of the task want to incomplete:")
+        var userInput = Int(readLine()!)
         
+        while userInput == nil {
+            print("Invalid input. Please enter a usable number.")
+            userInput = Int(readLine()!)
+        }
+        taskArray[userInput!].completionStatus = true
+        //Remove the due date since the task is complete
+        taskArray[userInput!].dueDate = nil
     }
     func deleteTasks() {
         //List all of tasks in title and detail with a number for the user to select
