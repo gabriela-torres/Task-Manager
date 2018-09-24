@@ -114,5 +114,16 @@ class TaskLibrary {
         }
         taskArray.remove(at: userInput!)
     }
+    func surprise() {
+        sleep(10)
+        print("What did you expect...")
+        sleep(5)
+        print("You shouldn't have done that. Exit out of tasks immediately...")
+        sleep(5)
+        print("Why would you pick number nine when I say specifically said 1 through 8. What are you a little kid that want to see what will happen. Well you just wait and see!")
+        sleep(5)
+        print("Just kidding! Don't pick number nine again. Now go back to doing your tasks.")
+        sleep(10)
+    }
 }
 

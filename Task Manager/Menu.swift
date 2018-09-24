@@ -23,7 +23,7 @@ class Menu {
         }
     }
     func validateInput(_ input: String) -> Bool { //Checking for valide input
-        let validMenuOptions = Array(1...8)
+        let validMenuOptions = Array(1...9)
         guard let number = Int(input) else {
             return false
         }
@@ -41,6 +41,7 @@ class Menu {
 6. Mark Completed Task as Incomplete
 7. Delete Tasks
 8. Exit
+   .....
 
 Please enter a number between 1 and 8:
 """)
@@ -72,6 +73,9 @@ Please enter a number between 1 and 8:
         case "8":
             //The User should be able to exit the program.
             exit()
+        case "9":
+            //Cute easter egg
+            taskManager.surprise()
         default:
             break
         }
