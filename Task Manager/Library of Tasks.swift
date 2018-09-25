@@ -115,6 +115,7 @@ class TaskLibrary {
         taskArray.remove(at: userInput!)
     }
     func surprise() {
+        //I guess you can call this an easter egg.
         sleep(10)
         print("What did you expect...")
         sleep(5)
