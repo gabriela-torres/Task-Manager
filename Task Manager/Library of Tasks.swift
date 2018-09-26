@@ -95,8 +95,8 @@ class TaskLibrary {
             print("Invalid input. Please enter a usable number.")
             userInput = Int(readLine()!)
         }
-        taskArray[userInput!].completionStatus = true
-        //Remove the due date since the task is complete
+        taskArray[userInput!].completionStatus = false
+        //Removing the due date since the task is now incomplete
         taskArray[userInput!].dueDate = nil
     }
     func deleteTasks() {

@@ -9,5 +9,6 @@
 import Foundation
 
 print("Welcome to my Task Manager Application\n")
+//Making an instance of the menu class
 let taskManagerMenu = Menu()
 taskManagerMenu.go()
